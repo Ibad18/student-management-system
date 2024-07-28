@@ -66,7 +66,7 @@ export default function StudentTable({ students }) {
           </TableBody>
         </Table>
       </TableContainer>
-      <UpdateStudentDialog setEditDialogOpen = {setEditDialogOpen} setCurrentStudent= {setCurrentStudent} editDialogOpen={editDialogOpen} currentStudent = {currentStudent} />
+      <UpdateStudentDialog setStudents = {setStudents} setEditDialogOpen = {setEditDialogOpen} setCurrentStudent= {setCurrentStudent} editDialogOpen={editDialogOpen} currentStudent = {currentStudent} />
     </>
   );
 }

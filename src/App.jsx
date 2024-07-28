@@ -28,7 +28,7 @@ function App() {
     <div className='appContainer'>
       <h1 className='appTitle'>Student Management System</h1>
       <CreateStudent getStudents={getStudents} />
-      <StudentList students={students} />
+      <StudentList students={students} setStudents = {setStudents} />
     </div>
   )
 }
