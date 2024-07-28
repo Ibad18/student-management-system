@@ -15,9 +15,14 @@ import { db } from '../firebaseConfig';
 import UpdateStudentDialog from './UpdateStudentDialog';
 
 export default function StudentTable({ students }) {
+  const [editDialogOpen, setEditDialogOpen] = React.useState(false)
+  const [currentStudent, setCurrentStudent] = React.useState(null)
+    
   const studentId = students.id
   function handleUpdateStudent(studentId) {
-    alert(studentId)
+  const student = students.find(s=>s.id === studentId)
+  setCurrentStudent(student)
+  setEditDialogOpen(true)
   }
   const handleDeleteStudent = async (studentId) => {
     try {
@@ -28,6 +33,9 @@ export default function StudentTable({ students }) {
       console.error('Error removing document: ', error);
     }
   }
+  // const handleDialogClose = ()=>{
+  //   setEditDialogOpen(false)
+  // }
   return (
     <>
       <TableContainer component={Paper}>
@@ -58,7 +66,7 @@ export default function StudentTable({ students }) {
           </TableBody>
         </Table>
       </TableContainer>
-      <UpdateStudentDialog />
+      <UpdateStudentDialog setEditDialogOpen = {setEditDialogOpen} setCurrentStudent= {setCurrentStudent} editDialogOpen={editDialogOpen} currentStudent = {currentStudent} />
     </>
   );
 }
