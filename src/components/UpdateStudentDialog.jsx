@@ -26,7 +26,7 @@ export default function UpdateStudentDialog({ setStudents, editDialogOpen, curre
             name: currentStudent.name,
             age: currentStudent.age
         })
-        setStudents((student)=>student.id === currentStudent.id ? currentStudent : student)
+        // setStudents((student)=>student.id === currentStudent.id ? currentStudent : student)
         handleDialogClose()
     }
     return (
